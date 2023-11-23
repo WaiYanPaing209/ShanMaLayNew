@@ -1,0 +1,4 @@
+#Thu Jun 29 22:16:37 MMT 2023
+base.0=D\:\\Projects\\ShanMaLay\\client\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

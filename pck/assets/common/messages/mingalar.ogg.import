@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mingalar.ogg-c60bdf713756ff41978638f5e00035fc.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/messages/mingalar.ogg"
+dest_files=[ "res://.import/mingalar.ogg-c60bdf713756ff41978638f5e00035fc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

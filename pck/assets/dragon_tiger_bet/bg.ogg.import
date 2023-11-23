@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bg.ogg-6379bd77302ac832c34a6a8317b68874.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/dragon_tiger_bet/bg.ogg"
+dest_files=[ "res://.import/bg.ogg-6379bd77302ac832c34a6a8317b68874.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

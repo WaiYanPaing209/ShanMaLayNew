@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bg.ogg-2a4c3c2daa177bb052e24613072871dd.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/horse_bet/bg.ogg"
+dest_files=[ "res://.import/bg.ogg-2a4c3c2daa177bb052e24613072871dd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

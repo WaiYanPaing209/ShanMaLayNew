@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/draw_only.ogg-84f5cead37604374321354547ae8d098.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/audio/draw_only.ogg"
+dest_files=[ "res://.import/draw_only.ogg-84f5cead37604374321354547ae8d098.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

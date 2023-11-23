@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/emoji.mp3-6e0f05ced1ae0dc55f0dfb0d4a371699.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/emoji.mp3"
+dest_files=[ "res://.import/emoji.mp3-6e0f05ced1ae0dc55f0dfb0d4a371699.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

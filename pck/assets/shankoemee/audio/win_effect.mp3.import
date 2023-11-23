@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/win_effect.mp3-13521a05a86e89efcc997da0eaf2ebe2.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/win_effect.mp3"
+dest_files=[ "res://.import/win_effect.mp3-13521a05a86e89efcc997da0eaf2ebe2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

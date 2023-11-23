@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/noti-1.mp3-cad0b7956f5db291c713f1b7853df720.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/audio/noti-1.mp3"
+dest_files=[ "res://.import/noti-1.mp3-cad0b7956f5db291c713f1b7853df720.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

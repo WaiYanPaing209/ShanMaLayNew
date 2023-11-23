@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1.ogg-9357f7233606207390267078a8fb022c.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/skm_bet/audio/1.ogg"
+dest_files=[ "res://.import/1.ogg-9357f7233606207390267078a8fb022c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

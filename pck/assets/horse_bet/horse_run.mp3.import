@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/horse_run.mp3-f35cfe251ed35c51deeb4ac8e3d5158c.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/horse_bet/horse_run.mp3"
+dest_files=[ "res://.import/horse_run.mp3-f35cfe251ed35c51deeb4ac8e3d5158c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

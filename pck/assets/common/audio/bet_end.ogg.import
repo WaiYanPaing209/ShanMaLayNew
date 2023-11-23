@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bet_end.ogg-1fbf446201d9bc123b108ef4f27e43a3.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/audio/bet_end.ogg"
+dest_files=[ "res://.import/bet_end.ogg-1fbf446201d9bc123b108ef4f27e43a3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
