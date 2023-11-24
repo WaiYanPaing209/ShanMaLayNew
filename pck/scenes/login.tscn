@@ -83,6 +83,7 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=4]
@@ -98,11 +99,13 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="DynamicFont" id=7]
-size = 25
+size = 30
+use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 25
+size = 30
+use_filter = true
 font_data = ExtResource( 6 )
 
 [node name="root" type="Node2D"]
@@ -184,35 +187,36 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 align = 1
-placeholder_text = "Username"
+placeholder_text = "Input နာမည္"
 
 [node name="Name" type="Label" parent="LoginBox/Username"]
-margin_left = -156.0
+margin_left = -96.0
 margin_top = 23.0
-margin_right = -46.0
-margin_bottom = 60.0
+margin_right = 14.0
+margin_bottom = 66.0
 custom_fonts/font = SubResource( 7 )
-text = "Username"
+text = "နာမည္"
 
 [node name="Password" type="LineEdit" parent="LoginBox"]
 margin_left = -213.0
 margin_top = -48.0
 margin_right = 357.0
 margin_bottom = 42.0
+rect_scale = Vector2( 0.989565, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
 align = 1
 secret = true
-placeholder_text = "Password"
+placeholder_text = "Input လွ်ိဳ႕ဝွက္နံပါတ္"
 
 [node name="PW" type="Label" parent="LoginBox/Password"]
-margin_left = -150.0
-margin_top = 29.0
-margin_right = -45.0
-margin_bottom = 66.0
+margin_left = -185.127
+margin_top = 32.0
+margin_right = -14.1265
+margin_bottom = 75.0
 custom_fonts/font = SubResource( 6 )
-text = "Password"
+text = "လွ်ိဳ႕ဝွက္နံပါတ္"
 
 [node name="Login" type="TextureButton" parent="LoginBox"]
 margin_left = -88.0

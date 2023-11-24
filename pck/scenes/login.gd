@@ -6,7 +6,7 @@ var filepath = "user://session.txt"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	_load_session()
+	_load_session()
 	_load_bgm()
 	$loginAnimationPlayer.play("Null")
 
