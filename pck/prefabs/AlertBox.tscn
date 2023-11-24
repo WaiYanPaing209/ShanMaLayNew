@@ -6,6 +6,7 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
+use_filter = true
 font_data = ExtResource( 2 )
 
 [node name="AlertBox" type="Sprite"]

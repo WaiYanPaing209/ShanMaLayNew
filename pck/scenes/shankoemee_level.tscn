@@ -10,7 +10,7 @@
 [ext_resource path="res://pck/assets/menu/Millionaire.png" type="Texture" id=8]
 [ext_resource path="res://pck/assets/common/panel-1.png" type="Texture" id=9]
 [ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=10]
-[ext_resource path="res://pck/assets/common/btn-exit.png" type="Texture" id=11]
+[ext_resource path="res://pck/assets/common/back_button.png" type="Texture" id=11]
 [ext_resource path="res://pck/assets/menu/Billionaire.png" type="Texture" id=12]
 [ext_resource path="res://pck/assets/menu/Boss.png" type="Texture" id=13]
 [ext_resource path="res://pck/assets/menu/Junior.png" type="Texture" id=14]
@@ -719,10 +719,11 @@ position = Vector2( 1000, 980 )
 targetY = 840.0
 
 [node name="Exit" type="TextureButton" parent="."]
-margin_left = 40.0
+margin_left = 45.0
 margin_top = 40.0
-margin_right = 120.0
+margin_right = 170.0
 margin_bottom = 120.0
+rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 11 )
 script = ExtResource( 4 )
 

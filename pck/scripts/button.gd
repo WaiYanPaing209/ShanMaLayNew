@@ -10,7 +10,7 @@ extends TextureButton
 func _ready():
 	rect_pivot_offset = rect_size / 2 
 	connect("button_down",self,"_on_button_down")
-	connect("button_up",self,"_on_button_up")
+	#connect("button_up",self,"_on_button_up")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,6 +27,6 @@ func _on_button_down():
 		self_modulate = Color(1,1,1,0.9)
 
 
-func _on_button_up():
-	rect_scale = Vector2(1,1)
-	self_modulate = Color(1,1,1,1)
+#func _on_button_up():
+#	rect_scale = Vector2(1,1)
+#	self_modulate = Color(1,1,1,1)

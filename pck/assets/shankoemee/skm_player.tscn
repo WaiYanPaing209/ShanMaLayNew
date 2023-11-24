@@ -21,10 +21,12 @@
 
 [sub_resource type="DynamicFont" id=2]
 size = 15
+use_filter = true
 font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=323]
 size = 25
+use_filter = true
 font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -281,11 +283,13 @@ animations = [ {
 
 [sub_resource type="DynamicFont" id=5]
 size = 25
+use_filter = true
 font_data = ExtResource( 19 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 50
 outline_size = 2
+use_filter = true
 font_data = ExtResource( 7 )
 
 [sub_resource type="Animation" id=320]
@@ -505,6 +509,7 @@ script = ExtResource( 16 )
 texture = ExtResource( 2 )
 
 [node name="Frame" type="Sprite" parent="Profile"]
+visible = false
 z_index = 1
 texture = ExtResource( 1 )
 
@@ -567,7 +572,6 @@ frames = SubResource( 55 )
 
 [node name="Emoji" type="AnimatedSprite" parent="."]
 visible = false
-scale = Vector2( 2, 2 )
 z_index = 1
 frames = ExtResource( 3 )
 playing = true
