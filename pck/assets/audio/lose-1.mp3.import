@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lose-1.mp3-bf76fcd1445d2a589a3e22449f2865ab.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/audio/lose-1.mp3"
+dest_files=[ "res://.import/lose-1.mp3-bf76fcd1445d2a589a3e22449f2865ab.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

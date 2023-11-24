@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/top.ogg-62f89a2c6b21f57d24ed8deb71c45823.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shweshan/audio/top.ogg"
+dest_files=[ "res://.import/top.ogg-62f89a2c6b21f57d24ed8deb71c45823.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

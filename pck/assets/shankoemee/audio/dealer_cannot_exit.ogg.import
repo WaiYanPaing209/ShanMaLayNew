@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dealer_cannot_exit.ogg-da4ceb0120443b07a36623ca49647ae7.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/dealer_cannot_exit.ogg"
+dest_files=[ "res://.import/dealer_cannot_exit.ogg-da4ceb0120443b07a36623ca49647ae7.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

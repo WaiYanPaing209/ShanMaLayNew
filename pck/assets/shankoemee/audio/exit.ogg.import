@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/exit.ogg-d222f3129d1efe1ac7e7d670c41c154f.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/exit.ogg"
+dest_files=[ "res://.import/exit.ogg-d222f3129d1efe1ac7e7d670c41c154f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

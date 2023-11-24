@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/poker_down.ogg-d6aff11671ba883f737e60de69099c02.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/audio/poker_down.ogg"
+dest_files=[ "res://.import/poker_down.ogg-d6aff11671ba883f737e60de69099c02.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

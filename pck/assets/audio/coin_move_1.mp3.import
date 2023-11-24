@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coin_move_1.mp3-3ff7b3fa0cce78719f56a76eb359663e.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/audio/coin_move_1.mp3"
+dest_files=[ "res://.import/coin_move_1.mp3-3ff7b3fa0cce78719f56a76eb359663e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

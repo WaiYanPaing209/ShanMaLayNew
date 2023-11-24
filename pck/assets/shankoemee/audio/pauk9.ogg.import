@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pauk9.ogg-339edc7637c3b4f4f0ac9c77256bf9be.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/pauk9.ogg"
+dest_files=[ "res://.import/pauk9.ogg-339edc7637c3b4f4f0ac9c77256bf9be.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

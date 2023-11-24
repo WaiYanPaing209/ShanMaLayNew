@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-main-background.mp3-54586789a8727c9109f037f87bd03043.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/audio/music-main-background.mp3"
+dest_files=[ "res://.import/music-main-background.mp3-54586789a8727c9109f037f87bd03043.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

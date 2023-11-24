@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/draw_card.ogg-bc986772e9f93f83166a1ad81be28527.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/draw_card.ogg"
+dest_files=[ "res://.import/draw_card.ogg-bc986772e9f93f83166a1ad81be28527.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

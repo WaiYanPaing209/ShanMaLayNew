@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/compare_money_cards.ogg-4bab4694e3b5291afbf8f0a180cdf8fd.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/audio/compare_money_cards.ogg"
+dest_files=[ "res://.import/compare_money_cards.ogg-4bab4694e3b5291afbf8f0a180cdf8fd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

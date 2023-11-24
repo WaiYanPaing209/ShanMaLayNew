@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$GODOT_PROJECT_NAME</title>
+    <meta charset="UTF-8" />
+    <style>
+      #status {
+        width: 100%;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      #canvas {
+        width: 100%;
+      }
+    </style>
+    $GODOT_HEAD_INCLUDE
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="status"></div>
+    <script src="$GODOT_URL"></script>
+    <script>
+      var engine = new Engine($GODOT_CONFIG);
+      engine
+        .startGame({
+          onProgress: function (current, total) {
+            let percent = (current / total) * 100;
+            document.getElementById("status").innerHTML =
+              parseFloat(percent).toFixed(2) + "%";
+          },
+        })
+        .then(() => {});
+
+      document.getElementById("canvas").addEventListener("touchstart", () => {
+        const el = document.documentElement;
+        if (el.requestFullscreen) {
+          el.requestFullscreen();
+          screen.orientation.lock("landscape");
+        }
+      });
+    </script>
+  </body>
+</html>

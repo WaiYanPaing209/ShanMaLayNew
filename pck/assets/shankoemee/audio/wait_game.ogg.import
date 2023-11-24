@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/wait_game.ogg-fca050f4d8ced275d1abd73ead66ea01.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/wait_game.ogg"
+dest_files=[ "res://.import/wait_game.ogg-fca050f4d8ced275d1abd73ead66ea01.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

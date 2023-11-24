@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bet_more.ogg-31775fe9e8ad0a49d8f3ac19be67fc78.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/common/messages/bet_more.ogg"
+dest_files=[ "res://.import/bet_more.ogg-31775fe9e8ad0a49d8f3ac19be67fc78.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

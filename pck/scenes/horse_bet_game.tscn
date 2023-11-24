@@ -1,0 +1,1997 @@
+[gd_scene load_steps=132 format=2]
+
+[ext_resource path="res://pck/assets/horse_bet/bet_area.png" type="Texture" id=1]
+[ext_resource path="res://pck/assets/horse_bet/bet_area_pressed.png" type="Texture" id=2]
+[ext_resource path="res://pck/assets/horse_bet/bg-1.png" type="Texture" id=3]
+[ext_resource path="res://pck/assets/common/joystick.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://pck/assets/horse_bet/result_table.png" type="Texture" id=5]
+[ext_resource path="res://pck/assets/horse_bet/horse1.png" type="Texture" id=6]
+[ext_resource path="res://pck/scenes/horse_bet_game.gd" type="Script" id=7]
+[ext_resource path="res://pck/assets/horse_bet/horse3.png" type="Texture" id=8]
+[ext_resource path="res://pck/assets/horse_bet/horse2.png" type="Texture" id=9]
+[ext_resource path="res://pck/assets/horse_bet/horse6.png" type="Texture" id=10]
+[ext_resource path="res://pck/assets/horse_bet/horse4.png" type="Texture" id=11]
+[ext_resource path="res://pck/assets/horse_bet/horse5.png" type="Texture" id=12]
+[ext_resource path="res://pck/assets/horse_bet/Horse.gd" type="Script" id=13]
+[ext_resource path="res://pck/assets/common/backdrop.png" type="Texture" id=14]
+[ext_resource path="res://pck/scripts/button.gd" type="Script" id=15]
+[ext_resource path="res://pck/assets/skm_bet/bet4.png" type="Texture" id=16]
+[ext_resource path="res://pck/assets/skm_bet/select-circle.png" type="Texture" id=17]
+[ext_resource path="res://pck/assets/skm_bet/bet3.png" type="Texture" id=18]
+[ext_resource path="res://pck/assets/horse_bet/highlight.png" type="Texture" id=19]
+[ext_resource path="res://pck/assets/common/btn-exit.png" type="Texture" id=20]
+[ext_resource path="res://pck/assets/audio/coin_move_1.mp3" type="AudioStream" id=21]
+[ext_resource path="res://pck/assets/horse_bet/horse_run.mp3" type="AudioStream" id=22]
+[ext_resource path="res://pck/assets/horse_bet/prize.png" type="Texture" id=23]
+[ext_resource path="res://pck/assets/horse_bet/stage.png" type="Texture" id=24]
+[ext_resource path="res://pck/assets/common/audio/win-2.mp3" type="AudioStream" id=25]
+[ext_resource path="res://pck/assets/horse_bet/win_amount.png" type="Texture" id=26]
+[ext_resource path="res://pck/assets/common/audio/mise_01.ogg" type="AudioStream" id=27]
+[ext_resource path="res://pck/prefabs/BackDrop.tscn" type="PackedScene" id=28]
+[ext_resource path="res://pck/assets/horse_bet/whistle.ogg" type="AudioStream" id=29]
+[ext_resource path="res://pck/assets/skm_bet/bet2.png" type="Texture" id=30]
+[ext_resource path="res://pck/assets/skm_bet/bet6.png" type="Texture" id=31]
+[ext_resource path="res://pck/assets/skm_bet/bet5.png" type="Texture" id=32]
+[ext_resource path="res://pck/assets/skm_bet/bet1.png" type="Texture" id=33]
+[ext_resource path="res://pck/assets/horse_bet/r1.png" type="Texture" id=34]
+[ext_resource path="res://pck/assets/horse_bet/r2.png" type="Texture" id=35]
+[ext_resource path="res://pck/assets/common/audio/count.ogg" type="AudioStream" id=36]
+[ext_resource path="res://pck/assets/common/timer.png" type="Texture" id=37]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=94]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 2000, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "hide"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 2000, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=95]
+resource_name = "show"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 2000, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="SpriteFrames" id=98]
+animations = [ {
+"frames": [ ExtResource( 19 ), null ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="DynamicFont" id=109]
+size = 22
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=111]
+size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=112]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0.784314, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=113]
+resource_name = "play"
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0.784314, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 29 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=54]
+animations = [ {
+"frames": [ SubResource( 42 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=59]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=67]
+animations = [ {
+"frames": [ SubResource( 55 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=80]
+animations = [ {
+"frames": [ SubResource( 68 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="AtlasTexture" id=81]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=82]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 230, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=83]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 460, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=84]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 690, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=85]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 920, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=86]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1150, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=87]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1380, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=88]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1610, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=89]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 1840, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=90]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 2070, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=91]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 2300, 0, 230, 160 )
+
+[sub_resource type="AtlasTexture" id=92]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 2530, 0, 230, 160 )
+
+[sub_resource type="SpriteFrames" id=93]
+animations = [ {
+"frames": [ SubResource( 81 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ), SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"loop": true,
+"name": "run",
+"speed": 30.0
+} ]
+
+[sub_resource type="DynamicFont" id=108]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=106]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Stage:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 900, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Prize:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Prize:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Stage:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("1:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("1:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("2:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("2:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("WinAmount:scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("WinAmount:scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Misc:stream")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 27 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Misc:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Result:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("BG:modulate:a")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=107]
+resource_name = "show"
+length = 6.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Stage:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 900, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.5, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Prize:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -120, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0, -120, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.5, 4 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Prize:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.5, 4 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Stage:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 3.5, 4 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("1:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 0.8, 3, 3.3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("1:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 0.8, 3, 3.3 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("2:scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.6, 0.9, 3.1, 3.4 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("2:scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.6, 0.9, 3.1, 3.4 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("WinAmount:scale:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5, 4, 4.2, 5.5, 5.7, 6 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("WinAmount:scale:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2.5, -0.25, 0, 0.25, 0, 1e-05, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 3.5, 4, 4.2, 5.5, 5.7, 6 )
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Misc:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Result:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 3.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("BG:modulate:a")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.784314, -0.25, 0, 0.25, 0, 0.784314, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 5.5, 6 )
+}
+
+[sub_resource type="DynamicFont" id=110]
+size = 350
+font_data = ExtResource( 4 )
+
+[node name="root" type="Node"]
+script = ExtResource( 7 )
+
+[node name="BetPanel" type="Node2D" parent="."]
+position = Vector2( 2000, 0 )
+z_index = 1
+
+[node name="BG" type="TextureRect" parent="BetPanel"]
+margin_left = 520.0
+margin_right = 2000.0
+margin_bottom = 900.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+
+[node name="Buttons" type="Node2D" parent="BetPanel"]
+position = Vector2( 560, 20 )
+
+[node name="0" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 711.0
+margin_top = 148.0
+margin_right = 851.0
+margin_bottom = 288.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/0"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/0"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/0"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="1" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 571.0
+margin_top = 148.0
+margin_right = 711.0
+margin_bottom = 288.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/1"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/1"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/1"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="2" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 431.0
+margin_top = 148.0
+margin_right = 571.0
+margin_bottom = 288.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/2"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/2"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/2"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="3" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 291.0
+margin_top = 148.0
+margin_right = 431.0
+margin_bottom = 288.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/3"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/3"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/3"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="4" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 151.0
+margin_top = 148.0
+margin_right = 291.0
+margin_bottom = 288.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/4"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/4"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/4"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="5" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 571.0
+margin_top = 288.0
+margin_right = 711.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/5"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/5"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/5"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="6" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 431.0
+margin_top = 288.0
+margin_right = 571.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/6"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/6"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/6"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="7" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 291.0
+margin_top = 288.0
+margin_right = 431.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/7"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/7"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/7"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="8" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 151.0
+margin_top = 288.0
+margin_right = 291.0
+margin_bottom = 428.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/8"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/8"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/8"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="9" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 431.0
+margin_top = 428.0
+margin_right = 571.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/9"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/9"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/9"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="10" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 291.0
+margin_top = 428.0
+margin_right = 431.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/10"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/10"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/10"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="11" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 151.0
+margin_top = 428.0
+margin_right = 291.0
+margin_bottom = 568.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/11"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/11"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/11"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="12" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 291.0
+margin_top = 568.0
+margin_right = 431.0
+margin_bottom = 708.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/12"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/12"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/12"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="13" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 151.0
+margin_top = 568.0
+margin_right = 291.0
+margin_bottom = 708.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/13"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/13"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/13"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="14" type="TextureButton" parent="BetPanel/Buttons"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 151.0
+margin_top = 708.0
+margin_right = 291.0
+margin_bottom = 848.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+
+[node name="Multiply" type="Label" parent="BetPanel/Buttons/14"]
+margin_right = 140.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "x0"
+align = 1
+valign = 1
+
+[node name="Total" type="Label" parent="BetPanel/Buttons/14"]
+margin_top = 50.0
+margin_right = 140.0
+margin_bottom = 90.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Me" type="Label" parent="BetPanel/Buttons/14"]
+margin_top = 90.0
+margin_right = 140.0
+margin_bottom = 130.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Numbers" type="Node2D" parent="BetPanel"]
+visible = false
+position = Vector2( 560, 20 )
+
+[node name="Label01" type="Label" parent="BetPanel/Numbers"]
+margin_top = 140.0
+margin_right = 140.0
+margin_bottom = 280.0
+custom_fonts/font = SubResource( 2 )
+text = "1"
+align = 1
+valign = 1
+
+[node name="Label02" type="Label" parent="BetPanel/Numbers"]
+margin_top = 280.0
+margin_right = 140.0
+margin_bottom = 420.0
+custom_fonts/font = SubResource( 2 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="Label03" type="Label" parent="BetPanel/Numbers"]
+margin_top = 420.0
+margin_right = 140.0
+margin_bottom = 560.0
+custom_fonts/font = SubResource( 2 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="Label04" type="Label" parent="BetPanel/Numbers"]
+margin_top = 560.0
+margin_right = 140.0
+margin_bottom = 700.0
+custom_fonts/font = SubResource( 2 )
+text = "4"
+align = 1
+valign = 1
+
+[node name="Label05" type="Label" parent="BetPanel/Numbers"]
+margin_top = 700.0
+margin_right = 140.0
+margin_bottom = 840.0
+custom_fonts/font = SubResource( 2 )
+text = "5"
+align = 1
+valign = 1
+
+[node name="Label06" type="Label" parent="BetPanel/Numbers"]
+margin_left = 140.0
+margin_right = 280.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "6"
+align = 1
+valign = 1
+
+[node name="Label07" type="Label" parent="BetPanel/Numbers"]
+margin_left = 280.0
+margin_right = 420.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "5"
+align = 1
+valign = 1
+
+[node name="Label08" type="Label" parent="BetPanel/Numbers"]
+margin_left = 420.0
+margin_right = 560.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "4"
+align = 1
+valign = 1
+
+[node name="Label09" type="Label" parent="BetPanel/Numbers"]
+margin_left = 560.0
+margin_right = 700.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="Label10" type="Label" parent="BetPanel/Numbers"]
+margin_left = 700.0
+margin_right = 840.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 2 )
+text = "2"
+align = 1
+valign = 1
+
+[node name="LastResult" type="Node2D" parent="BetPanel"]
+position = Vector2( 1440, 0 )
+
+[node name="Label" type="Label" parent="BetPanel/LastResult"]
+visible = false
+margin_top = 40.0
+margin_right = 480.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 3 )
+text = "Last Result"
+align = 1
+valign = 1
+
+[node name="ResultTable" type="Sprite" parent="BetPanel/LastResult"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 247, 440 )
+texture = ExtResource( 5 )
+
+[node name="Label1" type="Label" parent="BetPanel/LastResult/ResultTable"]
+visible = false
+margin_left = -240.0
+margin_top = -280.0
+margin_right = -80.0
+margin_bottom = -180.0
+custom_fonts/font = SubResource( 3 )
+text = "1st"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="BetPanel/LastResult/ResultTable"]
+visible = false
+margin_left = -80.0
+margin_top = -280.0
+margin_right = 80.0
+margin_bottom = -180.0
+custom_fonts/font = SubResource( 3 )
+text = "2nd"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="BetPanel/LastResult/ResultTable"]
+visible = false
+margin_left = 80.0
+margin_top = -280.0
+margin_right = 240.0
+margin_bottom = -180.0
+custom_fonts/font = SubResource( 3 )
+text = "X"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BetPanel/LastResult/ResultTable"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -240.0
+margin_top = -180.0
+margin_right = -240.0
+margin_bottom = -280.0
+
+[node name="Label" type="Label" parent="BetPanel"]
+visible = false
+margin_left = 980.0
+margin_top = 740.0
+margin_right = 1280.0
+margin_bottom = 800.0
+custom_fonts/font = SubResource( 4 )
+text = "My Balance"
+align = 1
+valign = 1
+
+[node name="Balance" type="Label" parent="BetPanel"]
+margin_left = 980.0
+margin_top = 800.0
+margin_right = 1280.0
+margin_bottom = 860.0
+custom_colors/font_color = Color( 0.909804, 0.721569, 0.0392157, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BetPanel"]
+anims/RESET = SubResource( 94 )
+anims/hide = SubResource( 96 )
+anims/show = SubResource( 95 )
+
+[node name="Highlight" type="AnimatedSprite" parent="BetPanel"]
+position = Vector2( -200, -200 )
+frames = SubResource( 98 )
+playing = true
+
+[node name="BetSelect" type="Node2D" parent="BetPanel"]
+position = Vector2( 620, 0 )
+
+[node name="Select" type="Sprite" parent="BetPanel/BetSelect"]
+position = Vector2( 730, 810 )
+texture = ExtResource( 17 )
+
+[node name="0" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 680.0
+margin_top = 760.0
+margin_right = 780.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 33 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "100"
+align = 1
+valign = 1
+
+[node name="1" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 784.0
+margin_top = 760.0
+margin_right = 884.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 30 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "500"
+align = 1
+valign = 1
+
+[node name="2" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 888.0
+margin_top = 760.0
+margin_right = 988.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 18 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "1K"
+align = 1
+valign = 1
+
+[node name="3" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 992.0
+margin_top = 760.0
+margin_right = 1092.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 16 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "2K"
+align = 1
+valign = 1
+
+[node name="4" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 1096.0
+margin_top = 760.0
+margin_right = 1196.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 32 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "10K"
+align = 1
+valign = 1
+
+[node name="5" type="TextureButton" parent="BetPanel/BetSelect"]
+margin_left = 1200.0
+margin_top = 760.0
+margin_right = 1300.0
+margin_bottom = 860.0
+texture_normal = ExtResource( 31 )
+script = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="BetPanel/BetSelect/5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 109 )
+text = "50K"
+align = 1
+valign = 1
+
+[node name="Timer" type="Sprite" parent="BetPanel"]
+modulate = Color( 1, 1, 1, 0.784314 )
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 626, 106 )
+texture = ExtResource( 37 )
+
+[node name="Label" type="Label" parent="BetPanel/Timer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -45.0
+margin_top = -47.0
+margin_right = -73.0
+margin_bottom = -60.0
+custom_colors/font_color = Color( 0.855114, 1, 0.335938, 1 )
+custom_fonts/font = SubResource( 111 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BetPanel/Timer"]
+anims/RESET = SubResource( 112 )
+anims/play = SubResource( 113 )
+
+[node name="Horses" type="Node" parent="."]
+
+[node name="1" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 178 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 16 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 1
+
+[node name="2" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 278 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 41 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 2
+
+[node name="3" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 378 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 54 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 3
+
+[node name="4" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 478 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 67 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 4
+
+[node name="5" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 578 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 80 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 5
+
+[node name="6" type="AnimatedSprite" parent="Horses"]
+position = Vector2( 136, 678 )
+scale = Vector2( 1.3, 1.3 )
+z_index = 1
+frames = SubResource( 93 )
+animation = "idle"
+playing = true
+script = ExtResource( 13 )
+no = 6
+
+[node name="Road" type="Node2D" parent="."]
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 100.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 20 )
+script = ExtResource( 15 )
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="GameVoice" type="AudioStreamPlayer" parent="Audio"]
+bus = "Effect"
+
+[node name="CoinMove" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 21 )
+bus = "Effect"
+
+[node name="HorseRun" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 22 )
+bus = "Effect"
+
+[node name="Whistle" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 29 )
+bus = "Effect"
+
+[node name="ResultStage" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Stage" type="Sprite" parent="ResultStage"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1000, 900 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 1
+texture = ExtResource( 24 )
+
+[node name="Prize" type="Sprite" parent="ResultStage"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1000, -120 )
+z_index = 1
+texture = ExtResource( 23 )
+
+[node name="1" type="Sprite" parent="ResultStage"]
+position = Vector2( 818, 559 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 1
+texture = ExtResource( 34 )
+
+[node name="2" type="Sprite" parent="ResultStage"]
+position = Vector2( 1169, 563 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 1
+texture = ExtResource( 35 )
+
+[node name="WinAmount" type="Sprite" parent="ResultStage"]
+position = Vector2( 1000, 450 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 1
+texture = ExtResource( 26 )
+
+[node name="Label" type="Label" parent="ResultStage/WinAmount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -160.0
+margin_top = -4.0
+margin_right = -160.0
+margin_bottom = -171.0
+custom_colors/font_color = Color( 0.32549, 0.172549, 0.0823529, 1 )
+custom_fonts/font = SubResource( 108 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ResultStage"]
+anims/RESET = SubResource( 106 )
+anims/show = SubResource( 107 )
+
+[node name="Misc" type="AudioStreamPlayer" parent="ResultStage"]
+stream = ExtResource( 27 )
+bus = "Effect"
+
+[node name="Result" type="AudioStreamPlayer" parent="ResultStage"]
+stream = ExtResource( 25 )
+bus = "Effect"
+
+[node name="BG" type="Sprite" parent="ResultStage"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1000, 450 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 14 )
+
+[node name="BackDrop" parent="." instance=ExtResource( 28 )]
+visible = false
+
+[node name="CountDown" type="Node2D" parent="."]
+visible = false
+position = Vector2( 1000, 450 )
+
+[node name="Label" type="Label" parent="CountDown"]
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 207.0
+custom_fonts/font = SubResource( 110 )
+text = "5"
+align = 1
+valign = 1
+
+[node name="Audio" type="AudioStreamPlayer" parent="CountDown"]
+stream = ExtResource( 36 )
+bus = "Effect"
+
+[connection signal="pressed" from="BetPanel/Buttons/0" to="." method="_on_bet" binds= [ 0 ]]
+[connection signal="pressed" from="BetPanel/Buttons/1" to="." method="_on_bet" binds= [ 1 ]]
+[connection signal="pressed" from="BetPanel/Buttons/2" to="." method="_on_bet" binds= [ 2 ]]
+[connection signal="pressed" from="BetPanel/Buttons/3" to="." method="_on_bet" binds= [ 3 ]]
+[connection signal="pressed" from="BetPanel/Buttons/4" to="." method="_on_bet" binds= [ 4 ]]
+[connection signal="pressed" from="BetPanel/Buttons/5" to="." method="_on_bet" binds= [ 5 ]]
+[connection signal="pressed" from="BetPanel/Buttons/6" to="." method="_on_bet" binds= [ 6 ]]
+[connection signal="pressed" from="BetPanel/Buttons/7" to="." method="_on_bet" binds= [ 7 ]]
+[connection signal="pressed" from="BetPanel/Buttons/8" to="." method="_on_bet" binds= [ 8 ]]
+[connection signal="pressed" from="BetPanel/Buttons/9" to="." method="_on_bet" binds= [ 9 ]]
+[connection signal="pressed" from="BetPanel/Buttons/10" to="." method="_on_bet" binds= [ 10 ]]
+[connection signal="pressed" from="BetPanel/Buttons/11" to="." method="_on_bet" binds= [ 11 ]]
+[connection signal="pressed" from="BetPanel/Buttons/12" to="." method="_on_bet" binds= [ 12 ]]
+[connection signal="pressed" from="BetPanel/Buttons/13" to="." method="_on_bet" binds= [ 13 ]]
+[connection signal="pressed" from="BetPanel/Buttons/14" to="." method="_on_bet" binds= [ 14 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/0" to="." method="_on_bet_select" binds= [ 0 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/1" to="." method="_on_bet_select" binds= [ 1 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/2" to="." method="_on_bet_select" binds= [ 2 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/3" to="." method="_on_bet_select" binds= [ 3 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/4" to="." method="_on_bet_select" binds= [ 4 ]]
+[connection signal="pressed" from="BetPanel/BetSelect/5" to="." method="_on_bet_select" binds= [ 5 ]]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

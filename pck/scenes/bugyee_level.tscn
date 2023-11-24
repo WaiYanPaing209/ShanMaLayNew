@@ -1,0 +1,680 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pck/assets/menu/bg-4.jpg" type="Texture" id=2]
+[ext_resource path="res://pck/assets/common/zawgyi-one.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://pck/assets/common/btn-level-6.png" type="Texture" id=4]
+[ext_resource path="res://pck/assets/common/btn-level-4.png" type="Texture" id=5]
+[ext_resource path="res://pck/assets/common/btn-level-5.png" type="Texture" id=6]
+[ext_resource path="res://pck/assets/common/btn-level-2.png" type="Texture" id=7]
+[ext_resource path="res://pck/assets/common/coin.png" type="Texture" id=8]
+[ext_resource path="res://pck/assets/common/btn-level-1.png" type="Texture" id=10]
+[ext_resource path="res://pck/assets/common/btn-exit.png" type="Texture" id=11]
+[ext_resource path="res://pck/assets/common/btn-level-3.png" type="Texture" id=12]
+[ext_resource path="res://pck/assets/common/panel-1.png" type="Texture" id=13]
+[ext_resource path="res://pck/scenes/bugyee_level.gd" type="Script" id=14]
+[ext_resource path="res://pck/scripts/button.gd" type="Script" id=15]
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("level1:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("level1:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("level2:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("level3:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("level4:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("level5:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("level6:rect_position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("level2:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("level3:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("level4:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("level5:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("level6:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "in"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("level1:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("level1:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("level2:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.6 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("level3:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 300, -0.25, 0, 0.25, 0, 200, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.7 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("level4:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.8 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("level5:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.9 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("level6:rect_position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 600, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("level2:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.6 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("level3:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.7 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("level4:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.8 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("level5:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.9 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("level6:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "out"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("level1:rect_position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("level1:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.5, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("level2:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.9 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("level3:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 200, -0.25, 0, 0.25, 0, 300, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.8 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("level4:rect_position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 500, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.7 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("level5:rect_position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 500, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.6 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("level6:rect_position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 500, -0.25, 0, 0.25, 0, 600, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("level2:modulate:a")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.4, 0.9 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("level3:modulate:a")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.3, 0.8 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("level4:modulate:a")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.2, 0.7 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("level5:modulate:a")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0.1, 0.6 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("level6:modulate:a")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 13 )
+region_rect = Rect2( 0, -10, 200, 210 )
+margin_left = 60.0
+margin_right = 60.0
+margin_top = 80.0
+margin_bottom = 60.0
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 3 )
+
+[node name="root" type="Node2D"]
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 200.0 ],
+"_edit_vertical_guides_": [ 1000.0 ]
+}
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 1000, 450 )
+texture = ExtResource( 2 )
+
+[node name="level1" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 200.0
+margin_top = 300.0
+margin_right = 700.0
+margin_bottom = 600.0
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 194.0
+margin_top = 134.0
+margin_right = -178.0
+margin_bottom = -117.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = -185.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၁၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="level2" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 750.0
+margin_top = 300.0
+margin_right = 1250.0
+margin_bottom = 600.0
+texture_normal = ExtResource( 7 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 195.0
+margin_top = 131.0
+margin_right = -176.0
+margin_bottom = -120.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "300"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 11.0
+margin_right = -20.0
+margin_bottom = -186.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၃၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="level3" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1300.0
+margin_top = 300.0
+margin_right = 1800.0
+margin_bottom = 600.0
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 196.0
+margin_top = 136.0
+margin_right = -177.0
+margin_bottom = -115.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "500"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 15.0
+margin_right = -20.0
+margin_bottom = -183.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၅၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="level4" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 200.0
+margin_top = 600.0
+margin_right = 700.0
+margin_bottom = 900.0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 195.0
+margin_top = 136.0
+margin_right = -175.0
+margin_bottom = -115.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "1000"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 15.0
+margin_right = -20.0
+margin_bottom = -183.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၁၀၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="level5" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 750.0
+margin_top = 600.0
+margin_right = 1250.0
+margin_bottom = 900.0
+texture_normal = ExtResource( 6 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 198.0
+margin_top = 136.0
+margin_right = -178.0
+margin_bottom = -115.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "3000"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 13.0
+margin_right = -20.0
+margin_bottom = -184.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၃၀၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="level6" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1300.0
+margin_top = 600.0
+margin_right = 1800.0
+margin_bottom = 900.0
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 3
+script = ExtResource( 15 )
+
+[node name="Bet" type="Label" parent="level6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 199.0
+margin_top = 137.0
+margin_right = -177.0
+margin_bottom = -114.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "5000"
+align = 1
+valign = 1
+
+[node name="Range" type="Label" parent="level6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 11.0
+margin_right = -20.0
+margin_bottom = -180.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "ပိုက္ဆံ ၅၀၀၀၀ ႏွင့္အထက္ရွိရမည္။"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/in = SubResource( 4 )
+anims/out = SubResource( 7 )
+
+[node name="Balance" type="Panel" parent="."]
+margin_left = 1560.0
+margin_top = 60.0
+margin_right = 1820.0
+margin_bottom = 140.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="Label" type="Label" parent="Balance"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_top = 10.0
+custom_fonts/font = SubResource( 6 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Coin" type="Sprite" parent="Balance"]
+position = Vector2( 31, 44 )
+texture = ExtResource( 8 )
+
+[node name="AlertBox" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1000, 980 )
+targetY = 840.0
+
+[node name="Exit" type="TextureButton" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 120.0
+margin_bottom = 120.0
+texture_normal = ExtResource( 11 )
+script = ExtResource( 15 )
+
+[connection signal="pressed" from="level1" to="." method="_on_level_pressed" binds= [ 0 ]]
+[connection signal="pressed" from="level2" to="." method="_on_level_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="level3" to="." method="_on_level_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="level4" to="." method="_on_level_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="level5" to="." method="_on_level_pressed" binds= [ 4 ]]
+[connection signal="pressed" from="level6" to="." method="_on_level_pressed" binds= [ 5 ]]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mise_01.ogg-69e15ada6daa2fad93265e93148d9253.oggstr"
+
+[deps]
+
+source_file="res://pck/assets/horse_bet/mise_01.ogg"
+dest_files=[ "res://.import/mise_01.ogg-69e15ada6daa2fad93265e93148d9253.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

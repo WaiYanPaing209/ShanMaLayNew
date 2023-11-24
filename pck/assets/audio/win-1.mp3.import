@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/win-1.mp3-097e83d962f622c2907fff6c38536baa.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/audio/win-1.mp3"
+dest_files=[ "res://.import/win-1.mp3-097e83d962f622c2907fff6c38536baa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
