@@ -34,6 +34,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1012, -300 ), Vector2( 1012, 462 ), Vector2( 1012, 462 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.164706, 0.164706, 0.0352941 ), Color( 0.164706, 0.164706, 0.164706, 0.301961 ), Color( 0.164706, 0.164706, 0.164706, 0.596078 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "Null"
@@ -49,6 +61,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1012, -300 ), Vector2( 1012, -300 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.164706, 0.164706, 0 ) ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -66,6 +90,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1012, 462 ), Vector2( 1012, -300 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.164706, 0.164706, 0.596078 ), Color( 0.164706, 0.164706, 0.164706, 0.32549 ), Color( 0.164706, 0.164706, 0.164706, 0.0235294 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 length = 0.001
@@ -80,6 +116,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1012, 462 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blur:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.164706, 0.164706, 0.164706, 0.596078 ) ]
 }
 
 [sub_resource type="DynamicFont" id=3]
@@ -126,7 +174,6 @@ scale = Vector2( 0.525, 0.525 )
 texture = ExtResource( 4 )
 
 [node name="Blur" type="Area2D" parent="."]
-visible = false
 modulate = Color( 0.164706, 0.164706, 0.164706, 0.596078 )
 script = ExtResource( 14 )
 __meta__ = {
@@ -248,10 +295,10 @@ texture_normal = ExtResource( 3 )
 script = ExtResource( 9 )
 
 [node name="Exit" type="TextureButton" parent="LoginBox"]
-margin_left = 437.0
-margin_top = -314.0
-margin_right = 518.0
-margin_bottom = -238.0
+margin_left = 420.0
+margin_top = -284.0
+margin_right = 501.0
+margin_bottom = -208.0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true

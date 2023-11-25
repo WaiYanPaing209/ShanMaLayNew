@@ -139,9 +139,9 @@ func _on_Exit_pressed():
 func _on_loginAnimationPlayer_animation_finished(anim_name):
 	if anim_name == "In":
 		cancel = true
-		$Blur.show()
+#		$Blur.show()
 		$AccountButton.set_disabled(true)
 	else:
 		cancel = false
-		$Blur.hide()
+#		$Blur.hide()
 		$AccountButton.set_disabled(false)

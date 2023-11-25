@@ -1,12 +1,15 @@
 extends Control
 
 const profile_textures = []
-onready var profile = $"Icon-profile-box/Profile"
+onready var profile = $Profile
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	profile.rect_scale = Vector2(1.5,1.5)
+	$playerInfoAnimation.play("RESET")
+#	$playerInfoAnimation.play("In")
+	profile.rect_scale = Vector2(1.6,1.6)
+	$Exit.connect("pressed", self, "_on_exit")
 
 
 func _load_profile_textures():
@@ -15,6 +18,8 @@ func _load_profile_textures():
 		var texture = load(path)
 		profile_textures.append(texture) 
 
+func _on_exit():
+	$playerInfoAnimation.play("Out")
 
-func _on_Exit_pressed():
-	self.hide()
+func _on_Profile_pressed():
+	$playerInfoSetting.show()

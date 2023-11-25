@@ -30,7 +30,9 @@ func _update_info(result, response_code, headers, body):
 	$Username.text = respond.username
 	$Nickname.text = respond.nickname
 	$Profile.texture_normal = profile_textures[respond.profile]
-#	$"player_info/Icon-profile-box/Profile".texture_normal = profile_textures[respond.profile]
+	$player_info/Username.text = respond.username
+	$player_info/Nickname.text = respond.nickname
+	$player_info/Profile.texture_normal = profile_textures[respond.profile]
 
 
 func _load_profile_textures():
@@ -67,7 +69,8 @@ func _on_Profile_pressed():
 #	$BottomBarAnimation.play("Out")
 #	yield(get_tree().create_timer(0.5), "timeout")
 #	get_tree().change_scene("res://pck/scenes/profile_setting.tscn")
-	$player_info.show()
+	$player_info.get_node("playerInfoAnimation").play("In")
+#	$player_info.visible = true
 
 
 func _on_SettingToggle_pressed():
@@ -173,3 +176,7 @@ func _on_skm_respond(result, response_code, headers, body):
 			"url":res.url
 		}
 		get_tree().change_scene("res://pck/scenes/skm_bet_game.tscn")
+
+
+
+

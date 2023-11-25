@@ -1,4 +1,4 @@
-[gd_scene load_steps=277 format=2]
+[gd_scene load_steps=278 format=2]
 
 [ext_resource path="res://pck/assets/HomeScence/image-main-background.png" type="Texture" id=1]
 [ext_resource path="res://pck/assets/common/profile-frame.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://pck/assets/HomeScence/icon-home-abcd.png" type="Texture" id=28]
 [ext_resource path="res://pck/assets/HomeScence/icon-home-fish.png" type="Texture" id=29]
 [ext_resource path="res://pck/assets/HomeScence/icon-home-slot.png" type="Texture" id=30]
+[ext_resource path="res://pck/scenes/player_info.tscn" type="PackedScene" id=31]
 
 [sub_resource type="Animation" id=244]
 resource_name = "Games_in"
@@ -2388,7 +2389,7 @@ margin_left = 200.0
 margin_top = 81.0
 margin_right = 450.0
 margin_bottom = 121.0
-custom_colors/font_color = Color( 0.972549, 1, 0.0823529, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 valign = 1
 __meta__ = {
@@ -2541,7 +2542,7 @@ __meta__ = {
 position = Vector2( 131, 148 )
 scale = Vector2( 0.492462, 0.487678 )
 frames = SubResource( 89 )
-frame = 37
+frame = 55
 playing = true
 
 [node name="BuGyee" type="TextureButton" parent="."]
@@ -2560,7 +2561,7 @@ __meta__ = {
 position = Vector2( 160, 47 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 165 )
-frame = 71
+frame = 14
 playing = true
 
 [node name="ABCD" type="TextureButton" parent="."]
@@ -2596,7 +2597,7 @@ __meta__ = {
 position = Vector2( 186.75, 56.375 )
 scale = Vector2( 0.517905, 0.511225 )
 frames = SubResource( 241 )
-frame = 27
+frame = 45
 playing = true
 
 [node name="Fishing" type="TextureButton" parent="."]
@@ -2723,6 +2724,8 @@ margin_top = 391.0
 margin_right = 562.0
 margin_bottom = 508.0
 texture = ExtResource( 27 )
+
+[node name="player_info" parent="." instance=ExtResource( 31 )]
 
 [connection signal="pressed" from="Profile" to="." method="_on_Profile_pressed"]
 [connection signal="pressed" from="SettingToggle" to="." method="_on_SettingToggle_pressed"]
