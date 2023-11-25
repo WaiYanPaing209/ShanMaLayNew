@@ -2,7 +2,7 @@ extends Node2D
 
 
 var filepath = "user://session.txt"
-
+var cancel = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -135,3 +135,11 @@ func _on_AccountButton_pressed():
 	
 func _on_Exit_pressed():
 	_loginBoxOut()
+
+func _on_loginAnimationPlayer_animation_finished(anim_name):
+	if anim_name == "In":
+		cancel = true
+		$Blur.show()
+	else:
+		cancel = false
+		$Blur.hide()

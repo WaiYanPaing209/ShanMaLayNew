@@ -28,10 +28,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.301 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1012, -300 ), Vector2( 1012, 462 ) ]
+"values": [ Vector2( 1012, -300 ), Vector2( 1012, 462 ), Vector2( 1012, 462 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -124,6 +124,17 @@ position = Vector2( 1000, 536 )
 scale = Vector2( 0.525, 0.525 )
 texture = ExtResource( 4 )
 
+[node name="Blur" type="TextureRect" parent="."]
+visible = false
+modulate = Color( 0.164706, 0.164706, 0.164706, 0.596078 )
+margin_right = 2304.0
+margin_bottom = 1080.0
+rect_scale = Vector2( 0.868, 0.84 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Remember" type="CheckButton" parent="."]
 visible = false
 margin_left = -476.0
@@ -179,15 +190,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -722.0
+margin_left = -724.0
 margin_top = -444.0
-margin_right = -152.0
+margin_right = -154.0
 margin_bottom = -354.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
-align = 1
-placeholder_text = "Input နာမည္"
+placeholder_text = "  Input နာမည္"
 
 [node name="Name" type="Label" parent="LoginBox/Username"]
 margin_left = -96.0
@@ -198,17 +208,16 @@ custom_fonts/font = SubResource( 7 )
 text = "နာမည္"
 
 [node name="Password" type="LineEdit" parent="LoginBox"]
-margin_left = -213.0
+margin_left = -214.0
 margin_top = -48.0
-margin_right = 357.0
+margin_right = 356.0
 margin_bottom = 42.0
 rect_scale = Vector2( 0.989565, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
-align = 1
 secret = true
-placeholder_text = "Input လွ်ိဳ႕ဝွက္နံပါတ္"
+placeholder_text = "  Input လွ်ိဳ႕ဝွက္နံပါတ္"
 
 [node name="PW" type="Label" parent="LoginBox/Password"]
 margin_left = -185.127
@@ -227,14 +236,19 @@ texture_normal = ExtResource( 3 )
 script = ExtResource( 9 )
 
 [node name="Exit" type="TextureButton" parent="LoginBox"]
-margin_left = 409.0
-margin_top = -296.0
-margin_right = 693.0
-margin_bottom = -29.0
-rect_scale = Vector2( 0.35, 0.35 )
-texture_normal = ExtResource( 13 )
+margin_left = 437.0
+margin_top = -314.0
+margin_right = 518.0
+margin_bottom = -238.0
+script = ExtResource( 9 )
+
+[node name="Exit Button" type="Sprite" parent="LoginBox/Exit"]
+position = Vector2( 37, 37 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 13 )
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="animation_finished" from="loginAnimationPlayer" to="." method="_on_loginAnimationPlayer_animation_finished"]
 [connection signal="pressed" from="AccountButton" to="." method="_on_AccountButton_pressed"]
 [connection signal="pressed" from="LoginBox/Login" to="." method="_on_Login_pressed"]
 [connection signal="pressed" from="LoginBox/Exit" to="." method="_on_Exit_pressed"]
