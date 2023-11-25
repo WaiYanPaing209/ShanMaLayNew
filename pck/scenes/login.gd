@@ -2,7 +2,7 @@ extends Node2D
 
 
 var filepath = "user://session.txt"
-var cancel = false
+var cancel 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -140,6 +140,8 @@ func _on_loginAnimationPlayer_animation_finished(anim_name):
 	if anim_name == "In":
 		cancel = true
 		$Blur.show()
+		$AccountButton.set_disabled(true)
 	else:
 		cancel = false
 		$Blur.hide()
+		$AccountButton.set_disabled(false)

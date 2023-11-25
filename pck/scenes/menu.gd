@@ -66,12 +66,13 @@ func comma_sep(number):
 
 
 func _on_Profile_pressed():
-	$AnimationPlayer.play("out")
-	$GamesOutAnimation.play("Games_out")
-	$UpperbracketAnimation.play("out")
-	$BottomBarAnimation.play("Out")
-	yield(get_tree().create_timer(0.5), "timeout")
-	get_tree().change_scene("res://pck/scenes/profile_setting.tscn")
+#	$AnimationPlayer.play("out")
+#	$GamesOutAnimation.play("Games_out")
+#	$UpperbracketAnimation.play("out")
+#	$BottomBarAnimation.play("Out")
+#	yield(get_tree().create_timer(0.5), "timeout")
+#	get_tree().change_scene("res://pck/scenes/profile_setting.tscn")
+	$player_info.show()
 
 
 func _on_SettingToggle_pressed():

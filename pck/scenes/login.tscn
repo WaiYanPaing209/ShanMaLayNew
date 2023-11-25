@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://pck/assets/menu/image-sign-background.png" type="Texture" id=1]
 [ext_resource path="res://pck/assets/menu/image-sign-popup.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://pck/prefabs/Setting.tscn" type="PackedScene" id=12]
 [ext_resource path="res://pck/assets/menu/icon-sign-cancel.png" type="Texture" id=13]
+[ext_resource path="res://pck/scripts/Blur.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
@@ -87,12 +88,12 @@ use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0862745, 0.105882, 0.14902, 1 )
+bg_color = Color( 0.0784314, 0.121569, 0.223529, 1 )
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+border_color = Color( 0.0784314, 0.121569, 0.223529, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -124,16 +125,25 @@ position = Vector2( 1000, 536 )
 scale = Vector2( 0.525, 0.525 )
 texture = ExtResource( 4 )
 
-[node name="Blur" type="TextureRect" parent="."]
+[node name="Blur" type="Area2D" parent="."]
 visible = false
 modulate = Color( 0.164706, 0.164706, 0.164706, 0.596078 )
-margin_right = 2304.0
-margin_bottom = 1080.0
-rect_scale = Vector2( 0.868, 0.84 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Blur_Image" type="Sprite" parent="Blur"]
+modulate = Color( 0.0666667, 0.262745, 0.858824, 1 )
+position = Vector2( 1000, 450 )
+scale = Vector2( 0.868, 0.84 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Blur"]
+polygon = PoolVector2Array( 0, 896, 2000, 904, 1992, 0, 1520, 0, 1544, 208, 1528, 328, 1528, 752, 504, 768, 496, 168, 1424, 160, 1504, 120, 1528, 128, 1512, 0, 0, 0 )
 
 [node name="Remember" type="CheckButton" parent="."]
 visible = false
@@ -197,7 +207,8 @@ margin_bottom = -354.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
-placeholder_text = "  Input နာမည္"
+align = 3
+placeholder_text = "Input နာမည္"
 
 [node name="Name" type="Label" parent="LoginBox/Username"]
 margin_left = -96.0
@@ -210,14 +221,15 @@ text = "နာမည္"
 [node name="Password" type="LineEdit" parent="LoginBox"]
 margin_left = -214.0
 margin_top = -48.0
-margin_right = 356.0
+margin_right = 362.0
 margin_bottom = 42.0
 rect_scale = Vector2( 0.989565, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
+align = 3
 secret = true
-placeholder_text = "  Input လွ်ိဳ႕ဝွက္နံပါတ္"
+placeholder_text = "Input လွ်ိဳ႕ဝွက္နံပါတ္"
 
 [node name="PW" type="Label" parent="LoginBox/Password"]
 margin_left = -185.127
@@ -241,6 +253,9 @@ margin_top = -314.0
 margin_right = 518.0
 margin_bottom = -238.0
 script = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Exit Button" type="Sprite" parent="LoginBox/Exit"]
 position = Vector2( 37, 37 )

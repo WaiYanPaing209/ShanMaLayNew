@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-main-back.mp3-183ebb313f7d53e61731299d632f0143.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/HomeScence/Home-Audio/music-main-back.mp3"
+dest_files=[ "res://.import/music-main-back.mp3-183ebb313f7d53e61731299d632f0143.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
