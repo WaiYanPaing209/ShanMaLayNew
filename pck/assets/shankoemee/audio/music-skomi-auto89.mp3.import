@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-skomi-auto89.mp3-c5fa3b0b998345418bf96f84937da053.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/music-skomi-auto89.mp3"
+dest_files=[ "res://.import/music-skomi-auto89.mp3-c5fa3b0b998345418bf96f84937da053.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-skomi-lose.mp3-a36727391b1e0c704eebbed8a4a46fb3.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/music-skomi-lose.mp3"
+dest_files=[ "res://.import/music-skomi-lose.mp3-a36727391b1e0c704eebbed8a4a46fb3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

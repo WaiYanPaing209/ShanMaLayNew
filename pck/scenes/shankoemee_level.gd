@@ -76,5 +76,5 @@ func _level_selected(result, response_code, headers, body):
 
 func _on_Exit_pressed():
 	$AnimationPlayer.play("out")
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(0.6), "timeout")
 	get_tree().change_scene("res://pck/scenes/menu.tscn")

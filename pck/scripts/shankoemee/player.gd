@@ -115,6 +115,9 @@ func _stop_count_down():
 	$CountDown.playing = false
 	$CountDown.frame = 0
 	$CountDown.visible = false
+	$PlayerLoading.playing = false
+	$PlayerLoading.frame = 0
+	$PlayerLoading.visible = false
 
 func _set_count_down(sec):
 	if sec == 0 :
@@ -122,7 +125,12 @@ func _set_count_down(sec):
 	$CountDown.speed_scale = 1/float(sec)
 	$CountDown.frame = 0
 	$CountDown.playing = true
-	$CountDown.visible = true
+	#$CountDown.visible = true
+	#$PlayerLoading.speed_scale = 1/float(sec)
+	#$PlayerLoading.frame = 0
+	$PlayerLoading.playing = true
+	$PlayerLoading.visible = true
+	
 
 func _play_emoji(emoji):
 	$Emoji.play(emoji)

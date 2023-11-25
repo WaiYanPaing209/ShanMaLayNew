@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/music-skomi-takeanothercard.mp3-c7451a72029fd295a57df739e0c086c9.mp3str"
+
+[deps]
+
+source_file="res://pck/assets/shankoemee/audio/music-skomi-takeanothercard.mp3"
+dest_files=[ "res://.import/music-skomi-takeanothercard.mp3-c7451a72029fd295a57df739e0c086c9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

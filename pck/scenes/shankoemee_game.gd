@@ -27,14 +27,14 @@ const PlayStates = {
 };
 
 var GameVoices = {
-	"catch":preload("res://pck/assets/shankoemee/audio/catch.ogg"),
-	"catch_all":preload("res://pck/assets/shankoemee/audio/catch_all.ogg"),
+	"catch":preload("res://pck/assets/shankoemee/audio/music-skomi-catch.mp3"),
+	"catch_all":preload("res://pck/assets/shankoemee/audio/music-skomi-catch.mp3"),
 	"change_dealer":preload("res://pck/assets/shankoemee/audio/change_dealer.ogg"),
 	"deliver":preload("res://pck/assets/shankoemee/audio/deliver.ogg"),
-	"draw_card":preload("res://pck/assets/shankoemee/audio/draw_card.ogg"),
+	"draw_card":preload("res://pck/assets/shankoemee/audio/music-skomi-takeanothercard.mp3"),
 	"exit":preload("res://pck/assets/shankoemee/audio/exit.ogg"),
 	"lose":preload("res://pck/assets/shankoemee/audio/lose.ogg"),
-	"new_game":preload("res://pck/assets/shankoemee/audio/new_game.ogg"),
+	"new_game":preload("res://pck/assets/shankoemee/audio/music-skomi-newround.mp3"),
 	"new_game_dealer":preload("res://pck/assets/shankoemee/audio/new_game_dealer.ogg"),
 	"wait_game":preload("res://pck/assets/shankoemee/audio/wait_game.ogg"),
 	"win":preload("res://pck/assets/shankoemee/audio/win.ogg"),
@@ -346,8 +346,10 @@ func _first_deliver(room):
 		$DrawBtns.visible = false
 		if myPauk == 8:
 			_playVoice(GameVoices.pauk8)
+			$Audio/M9auto89.play()
 		elif myPauk == 9:
 			_playVoice(GameVoices.pauk9)
+			$Audio/M9auto89.play()
 
 
 func _second_deliver(room):
@@ -475,7 +477,8 @@ func _end(room):
 		var dealerBet = int($DealerBet/Label.text);
 		dealerBet += loseAmount
 		$DealerBet/Label.text = str(dealerBet)
-		$Audio/CoinMove.play()
+		#$Audio/CoinMove.play()
+		$Audio/M9CoinMove.play()
 		for i in losers:
 			_coin_move_from_player_to_dealer(i)
 			var player = players[i]
@@ -509,7 +512,8 @@ func _end(room):
 			print("Win amount : " + str(player.winAmount))
 			print("Coin count : " + str(coin_count))
 			if player.winAmount > 0:
-				$Audio/CoinMove.play()
+				#$Audio/CoinMove.play()
+				$Audio/M9CoinMove.play()
 			for j in range(coin_count):
 				_coin_move_from_dealer_to_player(i)
 			yield(get_tree().create_timer(0.5), "timeout")
@@ -548,16 +552,19 @@ func _end(room):
 func _check_dealer_change(room):
 	if isStart == true :
 		isStart = false
-		$Audio/CoinMove.play()
+		#$Audio/CoinMove.play()
+		$Audio/M9CoinMove.play()
 		var t = ceil(room.dealerBet / room.minBet)
 		for i in range(t):
 			_coin_move_from_player_balance_to_dealer(room.dealerIndex)
 			yield(get_tree().create_timer(COIN_MOVE_DELAY), "timeout")
 	elif room.dealerIndex != _room.dealerIndex :
-		$Audio/CoinMove.play()
+		#$Audio/CoinMove.play()
+		$Audio/M9CoinMove.play()
 		_move_all_coin_from_dealer_player(_room.dealerIndex)
 		yield(get_tree().create_timer(0.5), "timeout")
-		$Audio/CoinMove.play()
+		#$Audio/CoinMove.play()
+		$Audio/M9CoinMove.play()
 		var t = ceil(room.dealerBet / room.minBet)
 		for i in range(t):
 			_coin_move_from_player_balance_to_dealer(room.dealerIndex)
@@ -577,7 +584,8 @@ func _check_player_bet_for_coin_move(room):
 			continue
 		var _player = _players[i]
 		if player.bet != _player.bet :
-			$Audio/CoinMove.play()
+			#$Audio/CoinMove.play()
+			$Audio/M9CoinMove.play()
 			var t = ceil(player.bet / room.minBet)
 			for j in range(t):
 				_coin_move_from_player_balance_to_bet(i)
@@ -839,7 +847,8 @@ func _deliver_card(card,pos,index):
 	sprite.position = $CardHome.position
 	sprite.target = pos
 	$Cards.get_node(str(index)).add_child(sprite)
-	$Audio/CardMove.play()
+	#$Audio/CardMove.play()
+	$Audio/M9CardMove.play()
 
 
 func _get_vIndex(index):
@@ -869,10 +878,14 @@ func _on_Emoji_pressed(emoji):
 	}
 	send(request)
 	$EmojiPanel.visible = false
+	$Backdrop.visible = false
 
 
 func _on_EmojiToggle_pressed():
 	$EmojiPanel.visible = !$EmojiPanel.visible
+	$Backdrop.visible = true
+	$MessagePanel.visible = false
+	$MenuPanel.visible = false
 
 
 func _on_message_pressed(msg):
@@ -889,6 +902,8 @@ func _on_message_pressed(msg):
 
 func _on_MessageToggle_pressed():
 	$MessagePanel.visible = !$MessagePanel.visible
+	$EmojiPanel.visible = false
+	$MenuPanel.visible = false
 
 
 # ----- Button Functions -----
@@ -903,6 +918,7 @@ func _on_Bet_pressed():
 	}
 	send(request)
 	$BetPanel.visible = false
+	$Audio/M9betMoney.play()
 
 
 func _on_Bet_select(i):
@@ -937,6 +953,7 @@ func _on_Stop_pressed():
 	}
 	send(request)
 	$DrawBtns.visible = false
+	$Audio/M9donttakecard.play()
 
 
 func _on_Slider_value_changed(value):
@@ -958,6 +975,8 @@ func _on_Clear_pressed():
 
 func _on_Menu_pressed():
 	$MenuPanel.visible = !$MenuPanel.visible
+	$EmojiPanel.visible = false
+	$MessagePanel.visible = false
 
 
 func _on_Exit_pressed():

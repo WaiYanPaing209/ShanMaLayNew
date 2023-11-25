@@ -4,6 +4,8 @@ var card_textures = {}
 var touchPos = Vector2()
 var init_pos = [null,null,null]
 
+var cardBack = preload("res://pck/assets/common/cards/Card.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in range(4):
@@ -30,6 +32,8 @@ func _input(event):
 		touchPos = event.position
 		$ArrowRight.visible = false
 		
+	# Gotta Comment it for a while
+	
 	if event is InputEventScreenDrag:
 		var x = event.position.x - touchPos.x
 		var y = event.position.y - touchPos.y

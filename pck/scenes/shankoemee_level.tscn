@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://pck/assets/HomeScence/image-main-background.png" type="Texture" id=1]
 [ext_resource path="res://pck/assets/common/zawgyi-one.ttf" type="DynamicFontData" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://pck/assets/menu/Billionaire.png" type="Texture" id=12]
 [ext_resource path="res://pck/assets/menu/Boss.png" type="Texture" id=13]
 [ext_resource path="res://pck/assets/menu/Junior.png" type="Texture" id=14]
+[ext_resource path="res://pck/scenes/Exit.gd" type="Script" id=15]
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
@@ -719,13 +720,13 @@ position = Vector2( 1000, 980 )
 targetY = 840.0
 
 [node name="Exit" type="TextureButton" parent="."]
-margin_left = 45.0
-margin_top = 40.0
-margin_right = 170.0
-margin_bottom = 120.0
+margin_left = 40.0
+margin_top = 45.0
+margin_right = 165.0
+margin_bottom = 125.0
 rect_scale = Vector2( 1.8, 1.8 )
 texture_normal = ExtResource( 11 )
-script = ExtResource( 4 )
+script = ExtResource( 15 )
 
 [connection signal="pressed" from="level1" to="." method="_on_level_pressed" binds= [ 0 ]]
 [connection signal="pressed" from="level2" to="." method="_on_level_pressed" binds= [ 1 ]]

@@ -6,9 +6,9 @@ var playerIndex = -2
 var target = Vector2(0,0)
 var destroyOnArrive = false
 var textures = [
-	preload("res://pck/assets/common/play-coin-1.png"),
-	preload("res://pck/assets/common/play-coin-2.png"),
-	preload("res://pck/assets/common/play-coin-3.png")
+	preload("res://pck/assets/common/M9coin1.png"),
+	preload("res://pck/assets/common/M9coin2.png"),
+	#preload("res://pck/assets/common/play-coin-3.png")
 ]
 
 # Called when the node enters the scene tree for the first time.
