@@ -1,14 +1,12 @@
 extends Control
 
 const profile_textures = []
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var profile = $"Icon-profile-box/Profile"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	profile.rect_scale = Vector2(1.5,1.5)
 
 
 func _load_profile_textures():

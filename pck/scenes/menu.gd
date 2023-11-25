@@ -7,10 +7,7 @@ const music = preload("res://pck/assets/audio/music-main-background.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_profile_textures()
-	$AnimationPlayer.play("in")
-	$GamesOutAnimation.play("Games_in")
-	$UpperbracketAnimation.play("in")
-	$BottomBarAnimation.play("In ")
+	_animationIn()
 	var request = {
 		"head":"user info"
 	}
@@ -33,6 +30,7 @@ func _update_info(result, response_code, headers, body):
 	$Username.text = respond.username
 	$Nickname.text = respond.nickname
 	$Profile.texture_normal = profile_textures[respond.profile]
+#	$"player_info/Icon-profile-box/Profile".texture_normal = profile_textures[respond.profile]
 
 
 func _load_profile_textures():
@@ -44,10 +42,7 @@ func _load_profile_textures():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
-		$AnimationPlayer.play("out")
-		$GamesOutAnimation.play("Games_out")
-		$UpperbracketAnimation.play("out")
-		$BottomBarAnimation.play("Out")
+		_animationOut()
 		yield(get_tree().create_timer(0.5), "timeout")
 		get_tree().change_scene("res://pck/scenes/confirm_exit.tscn")
 
@@ -78,21 +73,26 @@ func _on_Profile_pressed():
 func _on_SettingToggle_pressed():
 	$Setting._show()
 
-
-func _on_ShanKoeMee_pressed():
+func _animationIn():
+	$AnimationPlayer.play("in")
+	$GamesOutAnimation.play("Games_in")
+	$UpperbracketAnimation.play("in")
+	$BottomBarAnimation.play("In ")
+	
+func _animationOut():
 	$AnimationPlayer.play("out")
 	$GamesOutAnimation.play("Games_out")
 	$UpperbracketAnimation.play("out")
 	$BottomBarAnimation.play("Out")
+
+func _on_ShanKoeMee_pressed():
+	_animationOut()
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://pck/scenes/shankoemee_level.tscn")
 
 
 func _on_BuGyee_pressed():
-	$AnimationPlayer.play("out")
-	$GamesOutAnimation.play("Games_out")
-	$UpperbracketAnimation.play("out")
-	$BottomBarAnimation.play("Out")
+	_animationOut()
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://pck/scenes/bugyee_level.tscn")
 
@@ -104,19 +104,13 @@ func _on_BuGyee_pressed():
 
 
 func _on_ShweShan_pressed():
-	$AnimationPlayer.play("out")
-	$GamesOutAnimation.play("Games_out")
-	$UpperbracketAnimation.play("out")
-	$BottomBarAnimation.play("Out")
+	_animationOut()
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://pck/scenes/shwe_shan_level.tscn")
 
 
 func _on_Poker_pressed():
-	$AnimationPlayer.play("out")
-	$GamesOutAnimation.play("Games_out")
-	$UpperbracketAnimation.play("out")
-	$BottomBarAnimation.play("Out")
+	_animationOut()
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().change_scene("res://pck/scenes/poker_level.tscn")
 
