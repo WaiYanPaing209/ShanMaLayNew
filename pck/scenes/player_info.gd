@@ -6,7 +6,9 @@ onready var profile = $Profile
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$playerInfoSetting.hide()
 	$playerInfoAnimation.play("RESET")
+	$playerInfoSetting.get_node("playerInfoAnimation").play("RESET")
 #	$playerInfoAnimation.play("In")
 	profile.rect_scale = Vector2(1.6,1.6)
 	$Exit.connect("pressed", self, "_on_exit")
@@ -23,3 +25,4 @@ func _on_exit():
 
 func _on_Profile_pressed():
 	$playerInfoSetting.show()
+	$playerInfoSetting.get_node("playerInfoAnimation").play("In")

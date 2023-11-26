@@ -277,7 +277,5 @@ rect_scale = Vector2( 0.15, 0.15 )
 texture_normal = ExtResource( 13 )
 
 [node name="playerInfoSetting" parent="." instance=ExtResource( 14 )]
-visible = false
 
 [connection signal="pressed" from="Profile" to="." method="_on_Profile_pressed"]
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
