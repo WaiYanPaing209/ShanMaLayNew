@@ -2419,6 +2419,7 @@ margin_top = 19.0
 margin_right = 140.0
 margin_bottom = 139.0
 texture_normal = ExtResource( 3 )
+expand = true
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
@@ -2542,7 +2543,7 @@ __meta__ = {
 position = Vector2( 131, 148 )
 scale = Vector2( 0.492462, 0.487678 )
 frames = SubResource( 89 )
-frame = 55
+frame = 58
 playing = true
 
 [node name="BuGyee" type="TextureButton" parent="."]
@@ -2561,7 +2562,7 @@ __meta__ = {
 position = Vector2( 160, 47 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 165 )
-frame = 14
+frame = 17
 playing = true
 
 [node name="ABCD" type="TextureButton" parent="."]
@@ -2597,7 +2598,7 @@ __meta__ = {
 position = Vector2( 186.75, 56.375 )
 scale = Vector2( 0.517905, 0.511225 )
 frames = SubResource( 241 )
-frame = 45
+frame = 48
 playing = true
 
 [node name="Fishing" type="TextureButton" parent="."]

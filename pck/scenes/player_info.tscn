@@ -159,6 +159,7 @@ margin_top = 296.0
 margin_right = 736.997
 margin_bottom = 416.0
 texture_normal = ExtResource( 3 )
+expand = true
 __meta__ = {
 "_edit_group_": true
 }

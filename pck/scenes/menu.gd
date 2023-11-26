@@ -29,17 +29,18 @@ func _update_info(result, response_code, headers, body):
 	$Balance.text = comma_sep(respond.balance)
 	$Username.text = respond.username
 	$Nickname.text = respond.nickname
-	$Profile.texture_normal = profile_textures[respond.profile]
+	$Profile.texture_normal = profile_textures[int(respond.profile) - 1]
 	$player_info/Username.text = respond.username
 	$player_info/Nickname.text = respond.nickname
-	$player_info/Profile.texture_normal = profile_textures[respond.profile]
+	$player_info/Profile.texture_normal = profile_textures[int(respond.profile) - 1]
 
 
 func _load_profile_textures():
-	for i in range(13):
-		var path = "res://pck/assets/common/profiles/" + str(i) + ".png"
+	for i in range(32):
+		var path = "res://pck/assets/HomeScence/Home-Photo/icon-photo-" + str(i+1) + ".png"
 		var texture = load(path)
-		profile_textures.append(texture) 
+		profile_textures.append(texture)
+	print(profile_textures)
 
 
 func _notification(what):
