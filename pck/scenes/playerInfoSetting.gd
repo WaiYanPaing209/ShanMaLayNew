@@ -33,8 +33,8 @@ func _ready():
 	
 func _update_info(result, response_code, headers, body):
 	var respond = JSON.parse(body.get_string_from_utf8()).result
-#	$NicknamePanel/Nickname.text = respond.nickname
-#	print(respond.username)
+#	$ProfilePanel/Nickname.text = respond.nickname
+#	print(respond.nickname)
 	$ProfilePanel/Profile.texture = profile_textures[int(respond.profile) - 1]
 
 func _on_profile_select(index):

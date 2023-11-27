@@ -7,6 +7,7 @@ const music = preload("res://pck/assets/audio/music-main-background.mp3")
 func _ready():
 	_load_profile_textures()
 	_animationIn()
+	Config.connect("usernameUpdate",self,"_on_usernameUpdate")
 	var request = {
 		"head":"user info"
 	}
@@ -40,7 +41,8 @@ func _update_info(result, response_code, headers, body):
 	$player_info/changePW/PWpanel/Username.text = respond.username
 #	print(str(respond.profile))
 
-
+func _on_usernameUpdate(name):
+	$Nickname.text = name
 
 func _load_profile_textures():
 	for i in range(32):

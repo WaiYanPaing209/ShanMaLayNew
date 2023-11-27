@@ -1,5 +1,6 @@
 extends Node
 
+signal usernameUpdate(name)
 
 var config = {
 	"name":"ShanMaLay",

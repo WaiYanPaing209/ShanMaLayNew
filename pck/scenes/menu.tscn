@@ -1168,7 +1168,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="DynamicFont" id=10]
-size = 25
+size = 35
 use_filter = true
 font_data = ExtResource( 11 )
 
@@ -2375,7 +2375,7 @@ anchor_bottom = 1.0
 margin_left = 200.0
 margin_top = 55.0
 margin_right = 450.0
-margin_bottom = 95.0
+margin_bottom = 106.0
 custom_fonts/font = SubResource( 10 )
 valign = 1
 __meta__ = {
@@ -2388,7 +2388,7 @@ anchor_bottom = 1.0
 margin_left = 200.0
 margin_top = 81.0
 margin_right = 450.0
-margin_bottom = 121.0
+margin_bottom = 132.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 valign = 1
@@ -2407,7 +2407,7 @@ anchor_bottom = 1.0
 margin_left = 505.0
 margin_top = 39.0
 margin_right = 652.0
-margin_bottom = 82.0
+margin_bottom = 90.0
 custom_fonts/font = SubResource( 10 )
 text = "0"
 align = 1
@@ -2543,7 +2543,7 @@ __meta__ = {
 position = Vector2( 131, 148 )
 scale = Vector2( 0.492462, 0.487678 )
 frames = SubResource( 89 )
-frame = 67
+frame = 4
 playing = true
 
 [node name="BuGyee" type="TextureButton" parent="."]
@@ -2562,7 +2562,7 @@ __meta__ = {
 position = Vector2( 160, 47 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 165 )
-frame = 26
+frame = 38
 playing = true
 
 [node name="ABCD" type="TextureButton" parent="."]
@@ -2598,7 +2598,7 @@ __meta__ = {
 position = Vector2( 186.75, 56.375 )
 scale = Vector2( 0.517905, 0.511225 )
 frames = SubResource( 241 )
-frame = 57
+frame = 69
 playing = true
 
 [node name="Fishing" type="TextureButton" parent="."]
