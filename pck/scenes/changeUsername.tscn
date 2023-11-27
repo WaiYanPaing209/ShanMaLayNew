@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/image-change-username-update.png" type="Texture" id=1]
 [ext_resource path="res://pck/assets/common/zawgyi-one.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://pck/assets/HomeScence/Home-Password/icon-home-password-cancel.png" type="Texture" id=7]
 [ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-checked.png" type="Texture" id=8]
+[ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-female.png" type="Texture" id=9]
+[ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-male.png" type="Texture" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -51,6 +53,14 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 10 )
+region_rect = Rect2( 0, 0, 1011, 1078 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 802, 1161 )
 
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 1, 1, 1, 0.337255 )
@@ -127,6 +137,39 @@ margin_bottom = 436.0
 custom_fonts/font = SubResource( 3 )
 text = "က်ား/မ ေ႐ြးမည္"
 
+[node name="MaleTag" type="Label" parent="usernamePanel"]
+margin_left = 285.0
+margin_top = 451.0
+margin_right = 355.0
+margin_bottom = 509.0
+custom_fonts/font = SubResource( 3 )
+text = "က်ား"
+
+[node name="MaleIcon" type="Panel" parent="usernamePanel/MaleTag"]
+margin_left = -59.0
+margin_top = 7.0
+margin_right = -19.0
+margin_bottom = 47.0
+rect_min_size = Vector2( 40, 40 )
+custom_styles/panel = SubResource( 9 )
+
+[node name="FemaleTag" type="Label" parent="usernamePanel"]
+margin_left = 773.0
+margin_top = 452.0
+margin_right = 794.0
+margin_bottom = 510.0
+rect_rotation = 1.24074
+custom_fonts/font = SubResource( 3 )
+text = "မ"
+
+[node name="FemaleIcon" type="Panel" parent="usernamePanel/FemaleTag"]
+margin_left = -67.0275
+margin_top = -0.548706
+margin_right = -27.0275
+margin_bottom = 49.4513
+rect_min_size = Vector2( 40, 40 )
+custom_styles/panel = SubResource( 10 )
+
 [node name="affirmative" type="TextureButton" parent="usernamePanel"]
 margin_left = 703.0
 margin_top = 524.0
@@ -145,6 +188,44 @@ texture_normal = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
+[node name="Panel" type="Panel" parent="."]
+margin_left = 808.0
+margin_top = 552.0
+margin_right = 848.0
+margin_bottom = 592.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 1249.0
+margin_top = 552.0
+margin_right = 1289.0
+margin_bottom = 592.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Male" type="TextureButton" parent="."]
+margin_left = 808.0
+margin_top = 552.0
+margin_right = 848.0
+margin_bottom = 592.0
+mouse_filter = 1
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Female" type="TextureButton" parent="."]
+margin_left = 1249.0
+margin_top = 552.0
+margin_right = 1289.0
+margin_bottom = 592.0
+mouse_filter = 1
+texture_normal = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
 [node name="AlertBox" parent="." instance=ExtResource( 6 )]
 
 [node name="Exit" type="TextureButton" parent="."]
@@ -159,24 +240,6 @@ texture_normal = ExtResource( 7 )
 expand = true
 stretch_mode = 4
 
-[node name="Male" type="TextureButton" parent="."]
-margin_left = 512.0
-margin_top = 128.0
-margin_right = 552.0
-margin_bottom = 168.0
-texture_pressed = ExtResource( 8 )
-expand = true
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Panel" type="Panel" parent="Male"]
-margin_left = 1.0
-margin_right = 41.0
-margin_bottom = 40.0
-custom_styles/panel = SubResource( 8 )
-
 [connection signal="pressed" from="usernamePanel/affirmative" to="." method="_on_affirmative_pressed"]
 [connection signal="pressed" from="usernamePanel/cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="Male" to="." method="_on_Male_pressed"]

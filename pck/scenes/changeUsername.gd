@@ -1,7 +1,13 @@
 extends Control
 
+onready var tick = load("res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-checked.png")
 
 func _ready():
+
+	$Male.connect("pressed",self,"_on_male_pressed")
+	$Male.texture_normal = null
+	$Female.connect("pressed",self,"_on_female_pressed")
+	$Female.texture_normal = null
 	var request = {
 		"head":"user info"
 	}
@@ -37,6 +43,16 @@ func _nickname_changed(result, response_code, headers, body):
 	if body.get_string_from_utf8() == "ok":
 		$AlertBox._show("Nickname changed!")
 
+func _on_male_pressed():
+	print("male pressed!")
+	$Male.texture_normal = tick
+	$Female.texture_normal = null
+	
+	
+func _on_female_pressed():
+	print("female pressed!")
+	$Female.texture_normal = tick
+	$Male.texture_normal = null
 
 func _on_cancel_pressed():
 	hide()
@@ -45,5 +61,3 @@ func _on_Exit_pressed():
 	hide()
 
 
-func _on_Male_pressed():
-	print("Male")
