@@ -26,3 +26,7 @@ func _on_exit():
 func _on_Profile_pressed():
 	$playerInfoSetting.show()
 	$playerInfoSetting.get_node("playerInfoAnimation").play("In")
+
+
+func _on_Edit_pressed():
+	pass # Replace with function body.

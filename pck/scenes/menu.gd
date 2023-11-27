@@ -3,7 +3,6 @@ extends Control
 const profile_textures = []
 const music = preload("res://pck/assets/audio/music-main-background.mp3")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_load_profile_textures()
@@ -16,12 +15,16 @@ func _ready():
 	add_child(http)
 	http.connect("request_completed",self,"_update_info")
 	http.request(url)
-	
 	var currentMusic = $"/root/bgm".stream.resource_path.get_file().get_basename()
 	if currentMusic != "music-main-background":
 		$"/root/bgm".stream = music
 		$"/root/bgm".play()
-
+	get_node("player_info").get_node("playerInfoSetting").connect("profile_changed",self,"_on_profile_changed")
+	
+func _on_profile_changed(selected_texture):
+#	print(str(selected_texture))
+	$player_info/Profile.texture_normal = selected_texture
+	$Profile.texture_normal = selected_texture
 
 func _update_info(result, response_code, headers, body):
 	var respond = JSON.parse(body.get_string_from_utf8()).result
@@ -30,9 +33,12 @@ func _update_info(result, response_code, headers, body):
 	$Username.text = respond.username
 	$Nickname.text = respond.nickname
 	$Profile.texture_normal = profile_textures[int(respond.profile) - 1]
+#	print(str(respond.profile))
 	$player_info/Username.text = respond.username
 	$player_info/Nickname.text = respond.nickname
 	$player_info/Profile.texture_normal = profile_textures[int(respond.profile) - 1]
+#	print(str(respond.profile))
+
 
 
 func _load_profile_textures():

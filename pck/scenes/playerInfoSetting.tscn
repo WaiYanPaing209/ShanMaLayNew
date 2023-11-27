@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://pck/assets/HomeScence/Home-Photo/icon-photo-box.png" type="Texture" id=1]
 [ext_resource path="res://pck/scripts/button.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://pck/assets/HomeScence/Home-Photo/icon-photo-1.png" type="Texture" id=5]
 [ext_resource path="res://pck/assets/HomeScence/Home-Photo/icon-photo-confirm.png" type="Texture" id=6]
 [ext_resource path="res://pck/assets/common/profiles/1.png" type="Texture" id=7]
+[ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pck/scenes/changePW.gd" type="Script" id=9]
 
 [sub_resource type="Animation" id=2]
 resource_name = "In"
@@ -125,6 +127,7 @@ margin_right = 120.0
 margin_bottom = 120.0
 texture_normal = ExtResource( 7 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="2" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -132,6 +135,7 @@ margin_right = 290.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="3" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 340.0
@@ -140,6 +144,7 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="4" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 510.0
@@ -148,6 +153,7 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="5" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 680.0
@@ -156,6 +162,7 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="6" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 850.0
@@ -164,6 +171,7 @@ margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="7" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_top = 180.0
@@ -172,6 +180,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="8" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -181,6 +190,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="9" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 340.0
@@ -190,6 +200,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="10" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 510.0
@@ -199,6 +210,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="11" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 680.0
@@ -208,6 +220,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="12" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 850.0
@@ -217,6 +230,7 @@ margin_bottom = 300.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="13" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_top = 360.0
@@ -225,6 +239,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="14" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -234,6 +249,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="15" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 340.0
@@ -243,6 +259,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="16" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 510.0
@@ -252,6 +269,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="17" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 680.0
@@ -261,6 +279,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="18" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 850.0
@@ -270,6 +289,7 @@ margin_bottom = 480.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="19" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_top = 540.0
@@ -278,6 +298,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="20" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -287,6 +308,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="21" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 340.0
@@ -296,6 +318,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="22" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 510.0
@@ -305,6 +328,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="23" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 680.0
@@ -314,6 +338,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="24" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 850.0
@@ -323,6 +348,7 @@ margin_bottom = 660.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="25" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_top = 720.0
@@ -331,6 +357,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="26" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -340,6 +367,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="27" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 340.0
@@ -349,6 +377,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="28" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 510.0
@@ -358,6 +387,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="29" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 680.0
@@ -367,6 +397,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="30" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 850.0
@@ -376,6 +407,7 @@ margin_bottom = 840.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 2 )
 
 [node name="31" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_top = 900.0
@@ -384,6 +416,7 @@ margin_bottom = 1020.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 9 )
 
 [node name="32" type="TextureButton" parent="ProfilePanel/ScrollContainer/Container"]
 margin_left = 170.0
@@ -393,8 +426,10 @@ margin_bottom = 1020.0
 rect_min_size = Vector2( 120, 120 )
 texture_normal = ExtResource( 5 )
 expand = true
+script = ExtResource( 9 )
 
 [node name="Profile" type="Sprite" parent="ProfilePanel"]
+visible = false
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 5 )
 
@@ -423,4 +458,38 @@ texture_normal = ExtResource( 6 )
 expand = true
 stretch_mode = 4
 
+[node name="AlertBox" parent="." instance=ExtResource( 8 )]
+
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/1" to="." method="_on_profile_select" binds= [ "1" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/2" to="." method="_on_profile_select" binds= [ "2" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/3" to="." method="_on_profile_select" binds= [ "3" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/4" to="." method="_on_profile_select" binds= [ "4" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/5" to="." method="_on_profile_select" binds= [ "5" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/6" to="." method="_on_profile_select" binds= [ "6" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/7" to="." method="_on_profile_select" binds= [ "7" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/8" to="." method="_on_profile_select" binds= [ "8" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/9" to="." method="_on_profile_select" binds= [ "9" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/10" to="." method="_on_profile_select" binds= [ "10" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/11" to="." method="_on_profile_select" binds= [ "11" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/12" to="." method="_on_profile_select" binds= [ "12" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/13" to="." method="_on_profile_select" binds= [ "13" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/14" to="." method="_on_profile_select" binds= [ "14" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/15" to="." method="_on_profile_select" binds= [ "15" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/16" to="." method="_on_profile_select" binds= [ "16" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/17" to="." method="_on_profile_select" binds= [ "17" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/18" to="." method="_on_profile_select" binds= [ "18" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/19" to="." method="_on_profile_select" binds= [ "19" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/20" to="." method="_on_profile_select" binds= [ "20" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/21" to="." method="_on_profile_select" binds= [ "21" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/22" to="." method="_on_profile_select" binds= [ "22" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/23" to="." method="_on_profile_select" binds= [ "23" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/24" to="." method="_on_profile_select" binds= [ "24" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/25" to="." method="_on_profile_select" binds= [ "25" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/26" to="." method="_on_profile_select" binds= [ "26" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/27" to="." method="_on_profile_select" binds= [ "27" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/28" to="." method="_on_profile_select" binds= [ "28" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/29" to="." method="_on_profile_select" binds= [ "29" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/30" to="." method="_on_profile_select" binds= [ "30" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/31" to="." method="_on_profile_select" binds= [ "31" ]]
+[connection signal="pressed" from="ProfilePanel/ScrollContainer/Container/32" to="." method="_on_profile_select" binds= [ "32" ]]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
