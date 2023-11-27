@@ -37,6 +37,7 @@ func _update_info(result, response_code, headers, body):
 	$player_info/Username.text = respond.username
 	$player_info/Nickname.text = respond.nickname
 	$player_info/Profile.texture_normal = profile_textures[int(respond.profile) - 1]
+	$player_info/changePW/PWpanel/Username.text = respond.username
 #	print(str(respond.profile))
 
 

@@ -20,7 +20,8 @@ use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 30
+size = 18
+use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -63,29 +64,45 @@ margin_bottom = 47.0
 custom_fonts/font = SubResource( 3 )
 text = "နာမည္"
 
+[node name="newPW" type="Label" parent="PWpanel"]
+margin_left = 221.0
+margin_top = 170.0
+margin_right = 331.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 3 )
+text = "နာမည္"
+
 [node name="PasswordOld" type="LineEdit" parent="PWpanel"]
 margin_left = 423.0
 margin_top = 314.0
-margin_right = 823.0
+margin_right = 1073.0
 margin_bottom = 394.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.529412, 0.776471, 0.956863, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 align = 1
 secret = true
-placeholder_text = "Password အေဟာင္း"
+placeholder_text = "ေက်းဇူးျပဳ၍ စကားဝွက္တစ္ခု သတ္မွတ္ပါ (အကၡရာ 6-18 လုံး၊ အဂၤလိပ္တစ္ခုတည္းသာ)"
+
+[node name="confirmNewPW" type="Label" parent="PWpanel"]
+margin_left = 76.0
+margin_top = 327.0
+margin_right = 364.0
+margin_bottom = 385.0
+custom_fonts/font = SubResource( 3 )
+text = "Password အသစ္"
 
 [node name="PasswordNew" type="LineEdit" parent="PWpanel"]
 margin_left = 423.0
 margin_top = 437.0
-margin_right = 823.0
+margin_right = 1073.0
 margin_bottom = 517.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.529412, 0.776471, 0.956863, 1 )
 custom_fonts/font = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 align = 1
 secret = true
-placeholder_text = "Password အသစ္"
+placeholder_text = "ေက်းဇူးျပဳ၍ စကားဝွက္တစ္ခု သတ္မွတ္ပါ (အကၡရာ 6-18 လုံး၊ အဂၤလိပ္တစ္ခုတည္းသာ)"
 
 [node name="Exit" type="TextureButton" parent="."]
 anchor_right = 0.04
@@ -98,3 +115,5 @@ rect_min_size = Vector2( 80, 80 )
 texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 4
+
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

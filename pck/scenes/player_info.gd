@@ -30,3 +30,8 @@ func _on_Profile_pressed():
 
 func _on_Edit_pressed():
 	pass # Replace with function body.
+
+
+func _on_PW_Change_pressed():
+	$changePW.show()
+	print("ok")
