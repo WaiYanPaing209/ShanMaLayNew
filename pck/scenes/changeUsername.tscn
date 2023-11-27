@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/image-change-username-update.png" type="Texture" id=1]
+[ext_resource path="res://pck/assets/common/zawgyi-one.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-dontdo.png" type="Texture" id=3]
+[ext_resource path="res://pck/assets/HomeScence/Home-Change-Username/icon-change-username-confirm.png" type="Texture" id=4]
+[ext_resource path="res://pck/scenes/changeUsername.gd" type="Script" id=5]
+[ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 5139, 3729 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0784314, 0.121569, 0.223529, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0784314, 0.121569, 0.223529, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0784314, 0.121569, 0.223529, 0 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="changeUsername" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="usernamePanel" type="Panel" parent="."]
+margin_left = 438.0
+margin_top = 94.0
+margin_right = 1638.0
+margin_bottom = 860.0
+rect_min_size = Vector2( 1200, 766 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="bg" type="Panel" parent="usernamePanel"]
+margin_left = 378.0
+margin_top = 183.0
+margin_right = 878.0
+margin_bottom = 273.0
+rect_min_size = Vector2( 500, 90 )
+custom_styles/panel = SubResource( 4 )
+
+[node name="warningTag" type="Label" parent="usernamePanel"]
+margin_left = 146.0
+margin_top = 317.0
+margin_right = 992.0
+margin_bottom = 360.0
+custom_colors/font_color = Color( 1, 0.858824, 0.0980392, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "နာမည္ႏွင့္ က်ား/မ ျပင္ၿပီးလွ်င္ ေနာက္ ရက္ , 30 အတြင္းထပ္ျပင္ခြင့္မျပဳပါ"
+
+[node name="NameTag" type="Label" parent="usernamePanel"]
+margin_left = 145.0
+margin_top = 201.0
+margin_right = 346.0
+margin_bottom = 259.0
+custom_fonts/font = SubResource( 3 )
+text = "နာမည္ျပင္မည္"
+
+[node name="Username" type="LineEdit" parent="usernamePanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -198.0
+margin_top = -201.0
+margin_right = 250.0
+margin_bottom = -111.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+align = 3
+placeholder_text = "Input နာမည္"
+
+[node name="GenderTag" type="Label" parent="usernamePanel"]
+margin_left = 188.0
+margin_top = 392.0
+margin_right = 411.0
+margin_bottom = 450.0
+custom_fonts/font = SubResource( 3 )
+text = "က်ား/မ ေ႐ြးမည္"
+
+[node name="affirmative" type="TextureButton" parent="usernamePanel"]
+margin_left = 762.0
+margin_top = 594.0
+margin_right = 1002.0
+margin_bottom = 674.0
+texture_normal = ExtResource( 4 )
+expand = true
+stretch_mode = 4
+
+[node name="cancel" type="TextureButton" parent="usernamePanel"]
+margin_left = 237.0
+margin_top = 599.0
+margin_right = 477.0
+margin_bottom = 679.0
+texture_normal = ExtResource( 3 )
+expand = true
+stretch_mode = 4
+
+[node name="AlertBox" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="usernamePanel/affirmative" to="." method="_on_affirmative_pressed"]

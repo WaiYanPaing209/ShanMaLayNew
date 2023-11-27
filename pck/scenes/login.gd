@@ -42,6 +42,7 @@ func _on_Login_pressed():
 	var regPassword = RegEx.new()
 	regPassword.compile("^[0-9a-zA-Z]{6,20}$")
 	var resultPassword = regPassword.search(password)
+#	print(regPassword.search(password))
 	if !resultPassword :
 		$AlertBox._show("Invalid password")
 		return

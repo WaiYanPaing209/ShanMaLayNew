@@ -254,7 +254,7 @@ texture = ExtResource( 9 )
 margin_left = 848.0
 margin_top = 594.0
 margin_right = 1580.0
-margin_bottom = 822.0
+margin_bottom = 824.0
 rect_scale = Vector2( 0.4, 0.4 )
 texture_normal = ExtResource( 10 )
 
@@ -278,6 +278,9 @@ texture_normal = ExtResource( 13 )
 expand = true
 
 [node name="playerInfoSetting" parent="." instance=ExtResource( 14 )]
+margin_top = -8.0
+margin_right = 0.0
+margin_bottom = -8.0
 
 [node name="changePW" parent="." instance=ExtResource( 15 )]
 visible = false

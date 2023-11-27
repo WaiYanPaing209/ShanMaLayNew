@@ -1,26 +1,28 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://pck/assets/HomeScence/Home-Password/image-home-password-popup.png" type="Texture" id=1]
 [ext_resource path="res://pck/assets/HomeScence/Home-Password/icon-home-password-cancel.png" type="Texture" id=2]
 [ext_resource path="res://pck/scenes/changePW.gd" type="Script" id=3]
 [ext_resource path="res://pck/assets/common/zawgyi-one.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://pck/assets/HomeScence/Home-Password/icon-home-password-confirm.png" type="Texture" id=5]
+[ext_resource path="res://pck/prefabs/AlertBox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 1200, 766 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 30
+size = 35
 use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
+size = 35
 use_filter = true
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 18
+size = 19
 use_filter = true
 font_data = ExtResource( 4 )
 
@@ -50,29 +52,29 @@ custom_styles/panel = SubResource( 1 )
 
 [node name="Username" type="Label" parent="PWpanel"]
 margin_left = 422.0
-margin_top = 181.0
-margin_right = 477.0
-margin_bottom = 224.0
+margin_top = 168.0
+margin_right = 487.0
+margin_bottom = 219.0
 custom_fonts/font = SubResource( 2 )
 text = "zxcs"
 
 [node name="Name" type="Label" parent="PWpanel/Username"]
 margin_left = -201.0
-margin_top = -11.0
+margin_top = -1.0
 margin_right = -91.0
-margin_bottom = 47.0
+margin_bottom = 57.0
 custom_fonts/font = SubResource( 3 )
 text = "နာမည္"
 
 [node name="newPW" type="Label" parent="PWpanel"]
-margin_left = 221.0
-margin_top = 170.0
-margin_right = 331.0
-margin_bottom = 228.0
+margin_left = 90.0
+margin_top = 461.0
+margin_right = 378.0
+margin_bottom = 519.0
 custom_fonts/font = SubResource( 3 )
-text = "နာမည္"
+text = "Password အသစ္"
 
-[node name="PasswordOld" type="LineEdit" parent="PWpanel"]
+[node name="PasswordNew" type="LineEdit" parent="PWpanel"]
 margin_left = 423.0
 margin_top = 314.0
 margin_right = 1073.0
@@ -85,14 +87,14 @@ secret = true
 placeholder_text = "ေက်းဇူးျပဳ၍ စကားဝွက္တစ္ခု သတ္မွတ္ပါ (အကၡရာ 6-18 လုံး၊ အဂၤလိပ္တစ္ခုတည္းသာ)"
 
 [node name="confirmNewPW" type="Label" parent="PWpanel"]
-margin_left = 76.0
-margin_top = 327.0
-margin_right = 364.0
-margin_bottom = 385.0
+margin_left = 52.0
+margin_top = 329.0
+margin_right = 355.0
+margin_bottom = 387.0
 custom_fonts/font = SubResource( 3 )
-text = "Password အသစ္"
+text = "Password အေဟာင္း"
 
-[node name="PasswordNew" type="LineEdit" parent="PWpanel"]
+[node name="ConfirmNewPw" type="LineEdit" parent="PWpanel"]
 margin_left = 423.0
 margin_top = 437.0
 margin_right = 1073.0
@@ -103,6 +105,15 @@ custom_styles/normal = SubResource( 5 )
 align = 1
 secret = true
 placeholder_text = "ေက်းဇူးျပဳ၍ စကားဝွက္တစ္ခု သတ္မွတ္ပါ (အကၡရာ 6-18 လုံး၊ အဂၤလိပ္တစ္ခုတည္းသာ)"
+
+[node name="Accept" type="TextureButton" parent="PWpanel"]
+margin_left = 474.0
+margin_top = 581.0
+margin_right = 724.0
+margin_bottom = 671.0
+texture_normal = ExtResource( 5 )
+expand = true
+stretch_mode = 4
 
 [node name="Exit" type="TextureButton" parent="."]
 anchor_right = 0.04
@@ -116,4 +127,7 @@ texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 4
 
+[node name="AlertBox" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="PWpanel/Accept" to="." method="_on_Accept_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
