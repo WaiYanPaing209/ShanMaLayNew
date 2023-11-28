@@ -3,8 +3,10 @@ extends Control
 const profile_textures = []
 const music = preload("res://pck/assets/audio/music-main-background.mp3")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$player_info.hide()
 	_load_profile_textures()
 	_animationIn()
 	Config.connect("usernameUpdate",self,"_on_usernameUpdate")
@@ -26,6 +28,12 @@ func _on_profile_changed(selected_texture):
 #	print(str(selected_texture))
 	$player_info/Profile.texture_normal = selected_texture
 	$Profile.texture_normal = selected_texture
+
+func _process(_delta):
+	if $player_info.visible == true:
+		_disable_button(true)
+	elif $player_info.visible == false:
+		_disable_button(false)
 
 func _update_info(result, response_code, headers, body):
 	var respond = JSON.parse(body.get_string_from_utf8()).result
@@ -79,6 +87,7 @@ func _on_Profile_pressed():
 #	$BottomBarAnimation.play("Out")
 #	yield(get_tree().create_timer(0.5), "timeout")
 #	get_tree().change_scene("res://pck/scenes/profile_setting.tscn")
+	$player_info.show()
 	$player_info.get_node("playerInfoAnimation").play("In")
 #	$player_info.visible = true
 
@@ -92,6 +101,15 @@ func _animationIn():
 	$UpperbracketAnimation.play("in")
 	$BottomBarAnimation.play("In ")
 	
+func _disable_button(disable):
+	print(disable)
+	$ShanKoeMee.disabled = disable
+	$BuGyee.disabled = disable
+	$ABCD.disabled = disable
+	$TigerDragon.disabled = disable
+	$Fishing.disabled = disable
+	$Slots.disabled = disable
+
 func _animationOut():
 	$AnimationPlayer.play("out")
 	$GamesOutAnimation.play("Games_out")

@@ -24,6 +24,7 @@ func _load_profile_textures():
 		profile_textures.append(texture) 
 
 func _on_exit():
+	hide()
 	$playerInfoAnimation.play("Out")
 
 func _on_Profile_pressed():

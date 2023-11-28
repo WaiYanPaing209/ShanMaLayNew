@@ -40,8 +40,9 @@ func _update_info(result, response_code, headers, body):
 #	print(respond.nickname)
 
 func _nickname_changed(result, response_code, headers, body):
-	if body.get_string_from_utf8() == "ok":
-		$AlertBox._show("Nickname changed!")
+	pass
+#	if body.get_string_from_utf8() == "ok":
+#		$AlertBox._show("Nickname changed!")
 
 func _on_male_pressed():
 	print("male pressed!")
